@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 import { useCartStore } from "../../store/cartStore"
-
+import{memo} from 'react'
 
 function ProductCard({ product }) {
   const addToCart = useCartStore(state => state.addToCart)
@@ -58,4 +58,4 @@ width:'100%'
   )
 }
 
-export default ProductCard
+export default memo(ProductCard)

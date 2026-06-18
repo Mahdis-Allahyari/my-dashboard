@@ -5,7 +5,7 @@ import UserCardSkeleton from "../../components/UserCardSkeleton/UserCardSkeleton
 import ProductCard from "../../components/ProductCard/ProductCard"
 function Products() {
     const {data :products =[] , loading , error} = useFetch('https://fakestoreapi.com/products')
-    const totalItems = useCartStore(state => state.getTotalItems)()
+    const totalItems = useCartStore(state => state.getTotalItems())
     return (
         <div>
 <div className="mb-6 flex items-center justify-between">
@@ -17,7 +17,7 @@ function Products() {
                 Browse our collection
             </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 . rounded-xl px-4 py-2 flex items-center gap-2">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2 flex items-center gap-2">
                 <span className="text-xl">🛒</span>
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
                     {totalItems} items in cart

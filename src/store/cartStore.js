@@ -41,7 +41,7 @@ export const useCartStore = create ((set,get)=>({
             }))
             }
     },
-    removeFormCard :(productId) => {
+    removeFromCart :(productId) => {
         set(state => ({
             cart: state.cart.filter(item => item.id !== productId)
 

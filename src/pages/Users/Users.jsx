@@ -1,9 +1,9 @@
-import { useFetch } from "../hooks/useFetch/useFetch";
-import UserCard from "../components/userCard/UserCard";
-import UserCardSkeleton from "../components/UserCardSkeleton/UserCardSkeleton";
+import { useFetch } from "../../hooks/useFetch/useFetch";
+import UserCard from "../../components/userCard/UserCard";
+import UserCardSkeleton from "../../components/UserCardSkeleton/UserCardSkeleton";
 import { useEffect, useState } from "react";
 import { Button } from "antd";
-import AddUserModal from "../components/AddUserModal/AddUserModal"
+import AddUserModal from "../../components/AddUserModal/AddUserModal"
 function Users() {
   const {
     data,
@@ -47,7 +47,7 @@ return (
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grig-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {loading &&
           Array.from({ length: 6 }).map((_, index) => (
             <UserCardSkeleton key={index} />
