@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
-//import { useCartStore } from "../store/cartStore";
+import { useCartStore } from "../../store/cartStore";
 function SideBar() {
+  const getTotalItems = useCartStore(state => state.getTotalItems)
   const links = [
     { name: "Dashboard", icon: "📊" , path:'/'},
     { name: "Users", icon: "👥" , path:'/users'},
     { name: "Products", icon: "📦" , path:'/products'},
-    { name: "Setting", icon: "⚙️", path:'/settings' },
+    { name: "Cart", icon: "🛒", path:'/cart' },
+  { name: "Setting", icon: "⚙️", path:'/settings' },
+  
   ];
   return (
     <aside className=" w-56 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 hidden md:flex flex-col">
@@ -24,6 +27,11 @@ function SideBar() {
              } >
             <span>{link.icon}</span>
             <span>{link.name}</span>
+            {link.name === 'Cart' && getTotalItems() > 0 &&(
+              <span className="w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center font-bold">
+                {getTotalItems()}
+              </span>
+            )}
 </NavLink>     
    ))}
       </nav>

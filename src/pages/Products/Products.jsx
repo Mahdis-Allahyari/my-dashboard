@@ -1,11 +1,11 @@
 
 import { useFetch } from "../../hooks/useFetch/useFetch"
-import { useCartStore } from "../../components/store/cartStore"
+import { useCartStore } from "../../store/cartStore"
 import UserCardSkeleton from "../../components/UserCardSkeleton/UserCardSkeleton"
 import ProductCard from "../../components/ProductCard/ProductCard"
 function Products() {
     const {data :products =[] , loading , error} = useFetch('https://fakestoreapi.com/products')
-    const totalItems = useCartStore(state => state.getTotalItems())
+    const totalItems = useCartStore(state => state.getTotalItems)()
     return (
         <div>
 <div className="mb-6 flex items-center justify-between">
@@ -20,7 +20,7 @@ function Products() {
             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 . rounded-xl px-4 py-2 flex items-center gap-2">
                 <span className="text-xl">🛒</span>
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
-                    {totalItems} items in caet
+                    {totalItems} items in cart
                 </span>
             </div>
             </div>
@@ -33,7 +33,7 @@ function Products() {
                     </button>
                 </div>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
                 {loading && (
                     Array.from ({length:8}).map((_,index)=>
                     <UserCardSkeleton key = {index}/>

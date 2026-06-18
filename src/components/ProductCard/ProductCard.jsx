@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
-import { useCartStore } from "../store/cartStore"
+import { useCartStore } from "../../store/cartStore"
 
 
 function ProductCard({ product }) {
@@ -24,7 +24,9 @@ function ProductCard({ product }) {
         sx={{
 objectFit:'contain',
 padding:'16px',
-backgroundColor:'#f9f9f9'
+backgroundColor:'#f9f9f9',
+height:'200px',
+width:'100%'
         }}/>
         <CardContent sx={{flexGrow: 1}}>
           <Typography 
@@ -33,13 +35,13 @@ backgroundColor:'#f9f9f9'
           sx={{
             display:'-webkit-box',
             WebkitLineClamp : 2,
-            WebkitBoxOriet :'vertical',
+            WebkitBoxOrient :'vertical',
             overflow:'hidden',
             marginBottom:'8px'
           }}>
             {product.title}
           </Typography>
-          <Typography variant ="h6" color="primaty" fontWeight = "bold">
+          <Typography variant ="h6" color="primary" fontWeight = "bold">
             ${product.price}
           </Typography>
         </CardContent>
@@ -48,7 +50,7 @@ backgroundColor:'#f9f9f9'
           variant="contained"
           fullWidth
           onClick={()=> addToCart(product)}>
-            Add to Cart 🛒
+            Add to Cart
           </Button>
         </CardActions>
         
