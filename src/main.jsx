@@ -5,7 +5,9 @@ import 'antd/dist/reset.css'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-
+import { useAuthStore } from './store/authStore.jsx'
+const initializeAuth = useAuthStore.getState().initializeAuth
+initializeAuth()
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

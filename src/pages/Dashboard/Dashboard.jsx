@@ -34,8 +34,8 @@ function Dashboard() {
                         </p>
                     </div>))}
             </div>
-            <div className="bg-white dark:bg-grauy-8000 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-                <h3 className=" font-semibold text-gray-700 dark:text-gray-200 mb-4">
+            <div className="bg-white dark:bg-grauy-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+                <h3 className=" font-semibold text-gray-700 dark:text-gray-500 mb-4">
                     Recent Activity
                 </h3>
                 <p className="text-gray-400 text-sm">
